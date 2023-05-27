@@ -1,0 +1,23 @@
+#include<stdio.h>
+int k,T,n;
+int main()
+{
+    freopen("lock.in","r",stdin);
+    freopen("lock.out","w",stdout);
+    scanf("%d %d",&T,&k);
+    if(k==1)
+    while(T--)
+    {
+        int ma=0,mi=30010;
+        scanf("%d",&n);
+        for(int i=1;i<=n;i++)
+        {
+            int c;
+            scanf("%d",&c);
+            if(ma<c)ma=c;
+            if(mi>c)mi=c;
+        }
+         printf("%d\n",ma-mi);
+    }
+    return 0;
+}

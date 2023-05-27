@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	freopen("paint.in","r","stdin");
+	freopen("paint.out","w","stdout");
+	int t,n,m,q,i,j,a[10000][3],max=0,b[1000][1000];
+	scanf("%d",&t);
+	for(i=0;i<1000;i++)
+		{
+			for(j=0;j<1000;j++)
+			{
+				b[i][j]=0;
+			}
+		}
+	while(m==0)	
+	{
+		scanf("%d%d%d",&m,&n,&q);
+		a[0][0]=n;
+		a[0][1]=m;
+		a[0][2]=q;
+	}
+	n=a[0][0];m=a[0][1];q=a[0][2];
+	for(i=0;i<n;i++)
+	{
+		if(a[i][0]==0)
+		{
+			for(j=0;j<m;j++)
+			{
+				max++;
+				if(max==q)
+					break;
+				b[a[i][1]][j]=a[i][2];
+			}
+		}
+		else
+		{
+			for(j=0;j<m;j++)
+			{
+				max++;
+				if(max==q)
+					break;
+				b[j][a[i][1]]=a[i][2];
+			}
+		}
+		i=0;
+		for(j=0;j<m;j++)
+		{
+			printf("%d",b[m][n]);
+		}
+		m=a[i][0];n=a[i][1];q=a[i][2];
+	}
+	return 0;
+}

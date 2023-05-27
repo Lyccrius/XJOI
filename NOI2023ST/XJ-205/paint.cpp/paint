@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int a[10000000],b[10000000];
+int main()
+{
+//freopen("paint.in","r",stdin);
+//freopen("paint.out","r",stdout);
+int opt,x,c,q,n,m,t;
+cin>>t>>n>>m>>q;
+for(n=1;n<=t;n++)
+cin>>opt>>x>>c;
+if(opt==0)
+c=x;
+if(opt==1)
+c=x;
+cout<<a[i][j]<<endl;
+return 0;
+}

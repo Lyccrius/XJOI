@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int N=1e9;
+int ans;
+bool sd[N];
+int main()
+{
+	freopen("power.in","r",stdin);
+	freopen("power.out","w",stdout);
+	//pow(n,m)=n^m
+	int n,k;
+	cin>>n>>k;
+		memset(sd,1,N);
+	if(k==1)
+	cout<<n;
+	else
+	{
+		bool fl=1;
+		for(int i=1;i<=n&&sd[i];i++)
+		{
+			for(int j=k;j<=0x3f&&fl;j++)
+			for(int l=1;l<=i;l++)
+			{
+				if(pow(l,j)==i)
+				{
+					ans++;
+					fl=0;
+					break;
+				}
+			}
+			fl=1;
+		}
+		cout<<ans;
+	}
+	return 0;
+}
+

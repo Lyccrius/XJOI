@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+int a[10000000005}={0},n,k;
+int i,j,m,x,ans=0;
+int pd(int v,int x)
+{
+	int i;
+	for(i=1;i<=x;i++)
+		v=v*v;
+	for(i=1;i<=n;i++)
+	{
+		if(v==i && a[i]==0)
+		{
+			return 1;
+		}
+	}
+}
+int main()
+{
+	int i,j,k,l,y,t;
+	freopen("power.in","r",stdin);
+	freopen("power.out","w",stdout);
+
+	scanf("%d%d",&n,&k);
+	for(i=1;i<=n;i++)
+	{
+		for(j=k;j<=n/2;j++)
+		{
+			if(pd(i,j)==1)
+			{
+				ans++;
+				a[pd(i,j)]=1;
+			}
+		}
+	}
+	printf("%d",ans);
+	return 0;
+}

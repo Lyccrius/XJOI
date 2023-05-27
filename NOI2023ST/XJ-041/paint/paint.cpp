@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	freopen("paint.in","r",stdin);
+	freopen("paint.out","w",stdout);
+	int n,m,q,opt,x,c,t,a[100005][100005];
+	cin>>t;
+	for(int i=1;i<=t;i++)//组数
+	{
+		cin>>n>>m>>q;
+		for(int k=1;k<=n;k++)//初始化
+		{
+			for(int l=1;l<=m;l++)
+			{
+				a[k][l]=0;
+			}
+		}
+		for(int j=1;j<=q;j++)//处理
+		{
+			cin>>opt>>x>>c;
+			if(opt==0)
+			{
+				for(int f=1;f<=m;f++)
+				{
+					a[x][f]=c;
+				}
+			}
+			else if(opt==1)
+			{
+				for(int f=1;f<=n;f++)
+				{
+					a[f][x]=c;
+				}
+			}
+		}
+		for(int k=1;k<=n;k++)//输出
+		{
+			for(int l=1;l<=m;l++)
+			{
+				cout<<a[k][l]<<" ";
+			}
+			cout<<endl;
+		}
+	}
+	return 0;
+}

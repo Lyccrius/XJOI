@@ -1,0 +1,39 @@
+#include<stdio.h>
+long long n,ans=1;
+int k,ci[1000100];
+bool po(long long x,int k)
+{
+    long u=1;
+    while(k)
+    {
+        u*=x;
+        if(u>n)return true;
+        k--;
+    }
+    return false;
+}
+int main()
+{
+    freopen("power.in","r",stdin);
+    freopen("power.out","w",stdout);
+    scanf("%lld %d",&n,&k);
+    if(k>=64||po(2,k))
+    {
+        printf("1");
+        return 0;
+    }
+    for(long long i=2;i<=n;i++)
+    {
+        long long o=1;
+        int u=0;
+        while(o<=n)
+        {
+            o*=i;
+            if(ci[o]==0)ci[o]=++u;
+        }
+    }
+    for(long long i=2;i<=n;i++)
+        if(ci[i]>=k)ans++;
+    printf("%lld",ans);
+    return 0;
+}
